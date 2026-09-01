@@ -72,7 +72,7 @@ export default function ListingDetailPage() {
   if (!listing) {
     return (
       <div className="mx-auto max-w-2xl px-6 py-24 text-center">
-        <h1 className="font-display text-2xl font-bold text-brand-950">Listing not found</h1>
+        <h1 className="font-display text-2xl font-bold text-ink">Listing not found</h1>
         <p className="mt-2 text-brand-500">This listing may have been removed or is no longer available.</p>
         <Link href="/listings">
           <Button className="mt-6">Browse all listings</Button>
@@ -144,17 +144,17 @@ export default function ListingDetailPage() {
               <>
                 <button
                   onClick={() => setActiveImage((activeImage - 1 + images.length) % images.length)}
-                  className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow hover:bg-white"
+                  className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-surface/90 p-2 shadow hover:bg-surface"
                   aria-label="Previous image"
                 >
-                  <ChevronLeft className="h-5 w-5 text-brand-800" />
+                  <ChevronLeft className="h-5 w-5 text-ink" />
                 </button>
                 <button
                   onClick={() => setActiveImage((activeImage + 1) % images.length)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow hover:bg-white"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-surface/90 p-2 shadow hover:bg-surface"
                   aria-label="Next image"
                 >
-                  <ChevronRight className="h-5 w-5 text-brand-800" />
+                  <ChevronRight className="h-5 w-5 text-ink" />
                 </button>
               </>
             )}
@@ -176,7 +176,7 @@ export default function ListingDetailPage() {
 
           {/* Description */}
           <div className="mt-8">
-            <h2 className="mb-3 font-display text-xl font-bold text-brand-950">Description</h2>
+            <h2 className="mb-3 font-display text-xl font-bold text-ink">Description</h2>
             <div className="prose prose-brand max-w-none text-brand-700">
               <p className="whitespace-pre-line leading-relaxed">
                 {listing.description || listing.short_description || "No description provided."}
@@ -187,7 +187,7 @@ export default function ListingDetailPage() {
           {/* Features */}
           {listing.features && listing.features.length > 0 && (
             <div className="mt-8">
-              <h2 className="mb-3 font-display text-xl font-bold text-brand-950">Features</h2>
+              <h2 className="mb-3 font-display text-xl font-bold text-ink">Features</h2>
               <ul className="grid gap-2 sm:grid-cols-2">
                 {listing.features.map((f) => (
                   <li key={f.id} className="flex items-center gap-2 text-sm text-brand-700">
@@ -201,12 +201,12 @@ export default function ListingDetailPage() {
           {/* Specifications */}
           {listing.specifications && listing.specifications.length > 0 && (
             <div className="mt-8">
-              <h2 className="mb-3 font-display text-xl font-bold text-brand-950">Specifications</h2>
+              <h2 className="mb-3 font-display text-xl font-bold text-ink">Specifications</h2>
               <dl className="grid overflow-hidden rounded-lg border border-brand-100 sm:grid-cols-2">
                 {listing.specifications.map((s) => (
-                  <div key={s.id} className="border-b border-brand-100 bg-white px-4 py-3">
+                  <div key={s.id} className="border-b border-brand-100 bg-surface px-4 py-3">
                     <dt className="text-xs font-semibold uppercase tracking-wide text-brand-400">{s.label}</dt>
-                    <dd className="mt-1 text-sm font-medium text-brand-900">{s.value}</dd>
+                    <dd className="mt-1 text-sm font-medium text-ink">{s.value}</dd>
                   </div>
                 ))}
               </dl>
@@ -216,7 +216,7 @@ export default function ListingDetailPage() {
           {/* Property details */}
           {listing.property && (
             <div className="mt-8">
-              <h2 className="mb-3 font-display text-xl font-bold text-brand-950">Property Details</h2>
+              <h2 className="mb-3 font-display text-xl font-bold text-ink">Property Details</h2>
               <dl className="grid overflow-hidden rounded-lg border border-brand-100 sm:grid-cols-3">
                 {[
                   ["Type", titleCase(listing.property.property_type)],
@@ -226,15 +226,15 @@ export default function ListingDetailPage() {
                   ["Purpose", listing.property.purpose ? titleCase(listing.property.purpose) : "—"],
                   ["Furnishing", listing.property.furnishing ? titleCase(listing.property.furnishing) : "—"],
                 ].map(([label, value]) => (
-                  <div key={label} className="border-b border-brand-100 bg-white px-4 py-3">
+                  <div key={label} className="border-b border-brand-100 bg-surface px-4 py-3">
                     <dt className="text-xs font-semibold uppercase tracking-wide text-brand-400">{label}</dt>
-                    <dd className="mt-1 text-sm font-medium text-brand-900">{value}</dd>
+                    <dd className="mt-1 text-sm font-medium text-ink">{value}</dd>
                   </div>
                 ))}
               </dl>
               {listing.property.documents && listing.property.documents.length > 0 && (
                 <div className="mt-3">
-                  <p className="text-sm font-semibold text-brand-900">Available documents:</p>
+                  <p className="text-sm font-semibold text-ink">Available documents:</p>
                   <div className="mt-2 flex flex-wrap gap-2">
                     {listing.property.documents.map((d, i) => (
                       <Badge key={i} tone="green">{d}</Badge>
@@ -248,7 +248,7 @@ export default function ListingDetailPage() {
           {/* Automobile details */}
           {listing.automobile && (
             <div className="mt-8">
-              <h2 className="mb-3 font-display text-xl font-bold text-brand-950">Vehicle Details</h2>
+              <h2 className="mb-3 font-display text-xl font-bold text-ink">Vehicle Details</h2>
               <dl className="grid overflow-hidden rounded-lg border border-brand-100 sm:grid-cols-3">
                 {[
                   ["Make", listing.automobile.make],
@@ -261,9 +261,9 @@ export default function ListingDetailPage() {
                   ["Colour", listing.automobile.color],
                   ["Engine", listing.automobile.engine_size],
                 ].map(([label, value]) => (
-                  <div key={label} className="border-b border-brand-100 bg-white px-4 py-3">
+                  <div key={label} className="border-b border-brand-100 bg-surface px-4 py-3">
                     <dt className="text-xs font-semibold uppercase tracking-wide text-brand-400">{label}</dt>
-                    <dd className="mt-1 text-sm font-medium text-brand-900">{value || "—"}</dd>
+                    <dd className="mt-1 text-sm font-medium text-ink">{value || "—"}</dd>
                   </div>
                 ))}
               </dl>
@@ -273,7 +273,7 @@ export default function ListingDetailPage() {
 
         {/* Right: sidebar */}
         <aside className="space-y-6">
-          <div className="rounded-lg border border-brand-100 bg-white p-6 shadow-card sticky top-24">
+          <div className="rounded-lg border border-brand-100 bg-surface p-6 shadow-card sticky top-24">
             <div className="flex items-center justify-between">
               <StatusBadge status={listing.status} />
               <div className="flex gap-2">
@@ -288,7 +288,7 @@ export default function ListingDetailPage() {
               </div>
             </div>
 
-            <h1 className="mt-3 font-display text-2xl font-bold leading-tight text-brand-950">
+            <h1 className="mt-3 font-display text-2xl font-bold leading-tight text-ink">
               {listing.title}
             </h1>
 
@@ -302,7 +302,7 @@ export default function ListingDetailPage() {
             </div>
 
             <div className="mt-5 border-t border-brand-100 pt-5">
-              <p className="font-display text-3xl font-bold text-brand-800">
+              <p className="font-display text-3xl font-bold text-ink">
                 {formatPrice(listing.price, listing.currency)}
               </p>
               {listing.is_price_negotiable && (
@@ -328,8 +328,8 @@ export default function ListingDetailPage() {
           </div>
 
           {/* Enquiry form */}
-          <div id="enquiry-form" className="rounded-lg border border-brand-100 bg-white p-6">
-            <h2 className="mb-4 font-display text-lg font-bold text-brand-950">Send an Enquiry</h2>
+          <div id="enquiry-form" className="rounded-lg border border-brand-100 bg-surface p-6">
+            <h2 className="mb-4 font-display text-lg font-bold text-ink">Send an Enquiry</h2>
             <form onSubmit={handleEnquiry} className="space-y-4">
               <div>
                 <Label htmlFor="name">Full Name *</Label>

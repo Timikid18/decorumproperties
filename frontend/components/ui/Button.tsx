@@ -17,11 +17,11 @@ const variants: Record<Variant, string> = {
   primary:
     "bg-brand-800 text-white hover:bg-brand-900 focus-visible:outline-brand-800 border border-transparent shadow-sm",
   secondary:
-    "bg-brand-50 text-brand-900 hover:bg-brand-100 border border-brand-200 focus-visible:outline-brand-500",
+    "bg-brand-50 text-ink hover:bg-brand-100 border border-brand-200 focus-visible:outline-brand-500",
   outline:
-    "bg-white text-brand-900 border border-brand-200 hover:border-brand-300 hover:bg-brand-50 focus-visible:outline-brand-500",
+    "bg-surface text-ink border border-brand-200 hover:border-brand-300 hover:bg-brand-50 focus-visible:outline-brand-500",
   ghost:
-    "bg-transparent text-brand-900 hover:bg-brand-50 border border-transparent focus-visible:outline-brand-500",
+    "bg-transparent text-ink hover:bg-brand-50 border border-transparent focus-visible:outline-brand-500",
   danger:
     "bg-accent-600 text-white hover:bg-accent-700 border border-transparent focus-visible:outline-accent-600 shadow-sm",
   whatsapp:

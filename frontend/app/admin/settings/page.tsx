@@ -72,7 +72,7 @@ export default function AdminSettingsPage() {
     <div className="space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <h2 className="font-display text-2xl font-bold text-brand-950">Site Settings</h2>
+          <h2 className="font-display text-2xl font-bold text-ink">Site Settings</h2>
           <p className="text-sm text-brand-500">Update business information shown across the site.</p>
         </div>
         <Button onClick={save} loading={saving}>Save Changes</Button>
@@ -81,7 +81,7 @@ export default function AdminSettingsPage() {
       {groups.map(([group, groupRows]) => (
         <Card key={group}>
           <CardContent>
-            <h3 className="mb-4 font-bold text-brand-950">{groupLabel(group)}</h3>
+            <h3 className="mb-4 font-bold text-ink">{groupLabel(group)}</h3>
             <div className="grid gap-4 sm:grid-cols-2">
               {groupRows.map((row) => {
                 if (ARRAY_KEYS.has(row.key)) {

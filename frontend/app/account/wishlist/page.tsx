@@ -21,7 +21,7 @@ export default function WishlistPage() {
 
   return (
     <div>
-      <h1 className="mb-6 flex items-center gap-2 font-display text-2xl font-bold text-brand-950">
+      <h1 className="mb-6 flex items-center gap-2 font-display text-2xl font-bold text-ink">
         <Heart className="h-6 w-6 text-accent-500" /> My Wishlist
       </h1>
       {!items ? (

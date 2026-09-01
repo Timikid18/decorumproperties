@@ -39,7 +39,7 @@ export function Pagination({
         "min-w-9 h-9 px-2 text-sm font-medium rounded-md border transition-colors",
         isCurrent
           ? "bg-brand-800 border-brand-800 text-white"
-          : "bg-white border-brand-200 text-brand-800 hover:border-brand-400",
+          : "bg-surface border-brand-200 text-ink hover:border-brand-400",
         disabled && "pointer-events-none opacity-40",
       )}
     >

@@ -69,7 +69,7 @@ export default function AdminListingDetailPage() {
       </div>
 
       <div className="flex flex-wrap items-center gap-3">
-        <h2 className="font-display text-2xl font-bold text-brand-950">{listing.title}</h2>
+        <h2 className="font-display text-2xl font-bold text-ink">{listing.title}</h2>
         <StatusBadge status={listing.status} />
         <ConditionBadge condition={listing.condition} />
       </div>
@@ -88,7 +88,7 @@ export default function AdminListingDetailPage() {
             ].map(([label, value]) => (
               <div key={label} className="border-b border-brand-100 pb-2">
                 <dt className="text-xs uppercase tracking-wide text-brand-400">{label}</dt>
-                <dd className="font-medium text-brand-900">{value}</dd>
+                <dd className="font-medium text-ink">{value}</dd>
               </div>
             ))}
           </dl>
@@ -98,7 +98,7 @@ export default function AdminListingDetailPage() {
       {listing.description && (
         <Card>
           <CardContent>
-            <h3 className="mb-2 font-bold text-brand-950">Description</h3>
+            <h3 className="mb-2 font-bold text-ink">Description</h3>
             <p className="whitespace-pre-line text-sm text-brand-700">{listing.description}</p>
           </CardContent>
         </Card>

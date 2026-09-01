@@ -9,33 +9,37 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // DECORUM navy — the dominant brand color (logo blue)
+        // DECORUM navy — the dominant brand color (CSS-variable driven for themes)
         brand: {
-          50: "#EEF3FB",
-          100: "#DCE6F7",
-          200: "#B5CBEE",
-          300: "#88AADF",
-          400: "#5480C4",
-          500: "#2E55A6",
-          600: "#1F4189",
-          700: "#163270",
-          800: "#0F2657",
-          900: "#0A1C42",
-          950: "#061229",
+          50: "hsl(var(--brand-50) / <alpha-value>)",
+          100: "hsl(var(--brand-100) / <alpha-value>)",
+          200: "hsl(var(--brand-200) / <alpha-value>)",
+          300: "hsl(var(--brand-300) / <alpha-value>)",
+          400: "hsl(var(--brand-400) / <alpha-value>)",
+          500: "hsl(var(--brand-500) / <alpha-value>)",
+          600: "hsl(var(--brand-600) / <alpha-value>)",
+          700: "hsl(var(--brand-700) / <alpha-value>)",
+          800: "hsl(var(--brand-800) / <alpha-value>)",
+          900: "hsl(var(--brand-900) / <alpha-value>)",
+          950: "hsl(var(--brand-950) / <alpha-value>)",
         },
         // DECORUM strong red — used sparingly for CTAs/highlights
         accent: {
-          50: "#FEF2F3",
-          100: "#FDE3E6",
-          200: "#FBC5CB",
-          300: "#F79AA5",
-          400: "#F06070",
-          500: "#E13342",
-          600: "#C81E2E",
-          700: "#A81724",
-          800: "#8B1621",
-          900: "#741820",
+          50: "hsl(var(--accent-50) / <alpha-value>)",
+          100: "hsl(var(--accent-100) / <alpha-value>)",
+          200: "hsl(var(--accent-200) / <alpha-value>)",
+          300: "hsl(var(--accent-300) / <alpha-value>)",
+          400: "hsl(var(--accent-400) / <alpha-value>)",
+          500: "hsl(var(--accent-500) / <alpha-value>)",
+          600: "hsl(var(--accent-600) / <alpha-value>)",
+          700: "hsl(var(--accent-700) / <alpha-value>)",
+          800: "hsl(var(--accent-800) / <alpha-value>)",
+          900: "hsl(var(--accent-900) / <alpha-value>)",
         },
+        // Theme-aware page background (white in light, deep navy in dark)
+        surface: "hsl(var(--surface) / <alpha-value>)",
+        // Theme-aware primary text (navy in light, near-white in dark)
+        ink: "hsl(var(--ink) / <alpha-value>)",
       },
       boxShadow: {
         card: "0 1px 2px rgba(10, 28, 66, 0.06), 0 4px 16px rgba(10, 28, 66, 0.06)",

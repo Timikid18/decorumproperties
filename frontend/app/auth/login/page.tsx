@@ -36,8 +36,8 @@ export default function LoginPage() {
 
   return (
     <div className="mx-auto max-w-md px-6 py-16">
-      <div className="rounded-lg border border-brand-100 bg-white p-8 shadow-card">
-        <h1 className="text-center font-display text-2xl font-bold text-brand-950">Sign In</h1>
+      <div className="rounded-lg border border-brand-100 bg-surface p-8 shadow-card">
+        <h1 className="text-center font-display text-2xl font-bold text-ink">Sign In</h1>
         <p className="mt-2 text-center text-sm text-brand-500">
           Welcome back to {settings.business_name || "DECORUM"}.
         </p>

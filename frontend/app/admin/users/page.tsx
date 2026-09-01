@@ -49,7 +49,7 @@ export default function AdminUsersPage() {
   return (
     <div className="space-y-5">
       <div>
-        <h2 className="font-display text-2xl font-bold text-brand-950">Users</h2>
+        <h2 className="font-display text-2xl font-bold text-ink">Users</h2>
         <p className="text-sm text-brand-500">Manage marketplace accounts.</p>
       </div>
 
@@ -74,11 +74,11 @@ export default function AdminUsersPage() {
                 <CardContent className="p-4">
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-100 text-sm font-bold text-brand-800">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-100 text-sm font-bold text-ink">
                         {u.avatar ? <Image src={u.avatar} alt={u.name} width={40} height={40} className="h-10 w-10 rounded-full object-cover" /> : u.name ? initials(u.name) : <UserRound className="h-5 w-5" />}
                       </div>
                       <div>
-                        <p className="font-bold text-brand-950">{u.name}</p>
+                        <p className="font-bold text-ink">{u.name}</p>
                         <p className="text-sm text-brand-500">{u.email} · Joined {formatDate(u.created_at)}</p>
                       </div>
                     </div>

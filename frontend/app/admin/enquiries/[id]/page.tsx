@@ -81,7 +81,7 @@ export default function AdminEnquiryDetailPage() {
 
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <h2 className="font-display text-2xl font-bold text-brand-950">{item.name}</h2>
+          <h2 className="font-display text-2xl font-bold text-ink">{item.name}</h2>
           <p className="text-sm text-brand-500">{formatDateTime(item.created_at)}</p>
         </div>
         <Select value={item.status} onChange={(e) => changeStatus(e.target.value)} className="w-44">
@@ -92,10 +92,10 @@ export default function AdminEnquiryDetailPage() {
       <div className="grid gap-5 lg:grid-cols-2">
         <Card>
           <CardContent>
-            <h3 className="mb-4 font-bold text-brand-950">Contact & Message</h3>
+            <h3 className="mb-4 font-bold text-ink">Contact & Message</h3>
             <dl className="space-y-3 text-sm">
               <div className="flex items-center gap-2"><Mail className="h-4 w-4 text-brand-500" /><span className="text-brand-600">Email:</span><a href={`mailto:${item.email}`} className="font-medium text-brand-700 hover:underline">{item.email}</a></div>
-              {item.phone && <div className="flex items-center gap-2"><Phone className="h-4 w-4 text-brand-500" /><span className="text-brand-600">Phone:</span><span className="font-medium text-brand-900">{item.phone}</span></div>}
+              {item.phone && <div className="flex items-center gap-2"><Phone className="h-4 w-4 text-brand-500" /><span className="text-brand-600">Phone:</span><span className="font-medium text-ink">{item.phone}</span></div>}
               {item.listing && (
                 <div className="flex items-center gap-2"><Link2 className="h-4 w-4 text-brand-500" /><span className="text-brand-600">Listing:</span>
                   <a href={`/listing/${item.listing.slug}`} target="_blank" rel="noopener noreferrer" className="font-medium text-brand-700 hover:underline">{item.listing.title}</a>
@@ -104,7 +104,7 @@ export default function AdminEnquiryDetailPage() {
               <div><Badge tone="slate">Source: {item.source}</Badge></div>
             </dl>
             <div className="mt-4 rounded-md bg-brand-50/60 p-4">
-              <p className="whitespace-pre-line text-sm text-brand-800">{item.message}</p>
+              <p className="whitespace-pre-line text-sm text-ink">{item.message}</p>
             </div>
             {whatsappLink && (
               <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 rounded-md bg-[#25D366] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#1fb457]">
@@ -116,14 +116,14 @@ export default function AdminEnquiryDetailPage() {
 
         <Card>
           <CardContent>
-            <h3 className="mb-4 flex items-center gap-2 font-bold text-brand-950">
+            <h3 className="mb-4 flex items-center gap-2 font-bold text-ink">
               <StickyNote className="h-5 w-5 text-brand-500" /> Internal Notes
             </h3>
             <div className="mb-5 space-y-3">
               {item.notes && item.notes.length > 0 ? (
                 item.notes.map((n) => (
                   <div key={n.id} className="rounded-md bg-brand-50/60 p-3">
-                    <p className="text-sm text-brand-800">{n.body}</p>
+                    <p className="text-sm text-ink">{n.body}</p>
                     <p className="mt-1 text-xs text-brand-400">{n.user ?? "Team"} · {formatDateTime(n.created_at)}</p>
                   </div>
                 ))

@@ -93,7 +93,7 @@ export default function AdminSellRequestDetailPage() {
 
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <h2 className="font-display text-2xl font-bold text-brand-950">{item.item_title}</h2>
+          <h2 className="font-display text-2xl font-bold text-ink">{item.item_title}</h2>
           <p className="text-sm text-brand-500">Submitted {formatDateTime(item.created_at)}</p>
         </div>
         <Select value={item.status} onChange={(e) => changeStatus(e.target.value)} className="w-44">
@@ -113,15 +113,15 @@ export default function AdminSellRequestDetailPage() {
         {/* Contact */}
         <Card>
           <CardContent>
-            <h3 className="mb-4 font-bold text-brand-950">Contact & Pricing</h3>
+            <h3 className="mb-4 font-bold text-ink">Contact & Pricing</h3>
             <dl className="space-y-3 text-sm">
-              <div className="flex items-center gap-2"><Phone className="h-4 w-4 text-brand-500" /><span className="text-brand-600">Phone:</span><span className="font-medium text-brand-900">{item.phone || "—"}</span></div>
-              <div className="flex items-center gap-2"><MessageCircle className="h-4 w-4 text-[#25D366]" /><span className="text-brand-600">WhatsApp:</span><span className="font-medium text-brand-900">{item.whatsapp || "—"}</span></div>
-              <div className="flex items-center gap-2"><Mail className="h-4 w-4 text-brand-500" /><span className="text-brand-600">Email:</span><span className="font-medium text-brand-900">{item.email || "—"}</span></div>
-              <div className="flex items-center gap-2"><MapPin className="h-4 w-4 text-brand-500" /><span className="text-brand-600">Location:</span><span className="font-medium text-brand-900">{item.location || "—"}</span></div>
+              <div className="flex items-center gap-2"><Phone className="h-4 w-4 text-brand-500" /><span className="text-brand-600">Phone:</span><span className="font-medium text-ink">{item.phone || "—"}</span></div>
+              <div className="flex items-center gap-2"><MessageCircle className="h-4 w-4 text-[#25D366]" /><span className="text-brand-600">WhatsApp:</span><span className="font-medium text-ink">{item.whatsapp || "—"}</span></div>
+              <div className="flex items-center gap-2"><Mail className="h-4 w-4 text-brand-500" /><span className="text-brand-600">Email:</span><span className="font-medium text-ink">{item.email || "—"}</span></div>
+              <div className="flex items-center gap-2"><MapPin className="h-4 w-4 text-brand-500" /><span className="text-brand-600">Location:</span><span className="font-medium text-ink">{item.location || "—"}</span></div>
               <div className="border-t border-brand-100 pt-3">
                 <span className="text-brand-600">Asking Price: </span>
-                <span className="text-lg font-bold text-brand-800">{formatPrice(item.asking_price)}</span>
+                <span className="text-lg font-bold text-ink">{formatPrice(item.asking_price)}</span>
               </div>
             </dl>
             {whatsappLink && (
@@ -135,12 +135,12 @@ export default function AdminSellRequestDetailPage() {
         {/* Item details */}
         <Card>
           <CardContent>
-            <h3 className="mb-4 font-bold text-brand-950">Item Details</h3>
+            <h3 className="mb-4 font-bold text-ink">Item Details</h3>
             <dl className="grid grid-cols-2 gap-3 text-sm">
               {details.map(([label, value]) => (
                 <div key={label} className="border-b border-brand-100 pb-2">
                   <dt className="text-xs uppercase tracking-wide text-brand-400">{label}</dt>
-                  <dd className="font-medium text-brand-900">{value}</dd>
+                  <dd className="font-medium text-ink">{value}</dd>
                 </div>
               ))}
             </dl>
@@ -163,14 +163,14 @@ export default function AdminSellRequestDetailPage() {
       {/* Notes */}
       <Card>
         <CardContent>
-          <h3 className="mb-4 flex items-center gap-2 font-bold text-brand-950">
+          <h3 className="mb-4 flex items-center gap-2 font-bold text-ink">
             <StickyNote className="h-5 w-5 text-brand-500" /> Internal Notes
           </h3>
           <div className="mb-5 space-y-3">
             {item.notes && item.notes.length > 0 ? (
               item.notes.map((n) => (
                 <div key={n.id} className="rounded-md bg-brand-50/60 p-3">
-                  <p className="text-sm text-brand-800">{n.body}</p>
+                  <p className="text-sm text-ink">{n.body}</p>
                   <p className="mt-1 text-xs text-brand-400">{n.user ?? "Team"} · {formatDateTime(n.created_at)}</p>
                 </div>
               ))

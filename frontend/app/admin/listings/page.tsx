@@ -77,7 +77,7 @@ export default function AdminListingsPage() {
     <div className="space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <h2 className="font-display text-2xl font-bold text-brand-950">Listings</h2>
+          <h2 className="font-display text-2xl font-bold text-ink">Listings</h2>
           <p className="text-sm text-brand-500">{meta ? `${meta.total} listings` : "Manage your listings"}</p>
         </div>
         <Link href="/admin/listings/new">
@@ -131,12 +131,12 @@ export default function AdminListingsPage() {
                   {listings.map((item) => (
                     <tr key={item.id} className="hover:bg-brand-50/40">
                       <td className="px-5 py-3">
-                        <Link href={`/admin/listings/${item.id}`} className="font-semibold text-brand-900 hover:text-brand-700">
+                        <Link href={`/admin/listings/${item.id}`} className="font-semibold text-ink hover:text-brand-700">
                           {item.title}
                         </Link>
                       </td>
                       <td className="px-5 py-3 text-brand-600">{TYPE_LABEL[item.listing_type] ?? item.listing_type}</td>
-                      <td className="px-5 py-3 font-medium text-brand-900">{formatPrice(item.price, item.currency)}</td>
+                      <td className="px-5 py-3 font-medium text-ink">{formatPrice(item.price, item.currency)}</td>
                       <td className="px-5 py-3">
                         <Select
                           value={item.status}

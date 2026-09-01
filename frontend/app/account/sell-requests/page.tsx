@@ -21,7 +21,7 @@ export default function MySellRequestsPage() {
 
   return (
     <div>
-      <h1 className="mb-6 flex items-center gap-2 font-display text-2xl font-bold text-brand-950">
+      <h1 className="mb-6 flex items-center gap-2 font-display text-2xl font-bold text-ink">
         <ClipboardList className="h-6 w-6 text-brand-700" /> My Sell Requests
       </h1>
 
@@ -44,7 +44,7 @@ export default function MySellRequestsPage() {
               <CardContent className="p-5">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div>
-                    <h3 className="font-bold text-brand-950">{req.item_title}</h3>
+                    <h3 className="font-bold text-ink">{req.item_title}</h3>
                     <p className="mt-0.5 text-sm text-brand-500">
                       {req.category_name ?? "Item"} · Submitted {formatDate(req.created_at)}
                     </p>
@@ -52,7 +52,7 @@ export default function MySellRequestsPage() {
                   <StatusBadge status={req.status} />
                 </div>
                 <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-brand-100 pt-4 text-sm">
-                  <span className="font-semibold text-brand-800">
+                  <span className="font-semibold text-ink">
                     {req.asking_price ? formatPrice(req.asking_price) : "Price on request"}
                   </span>
                   <span className="inline-flex items-center gap-1 text-brand-400">

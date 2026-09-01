@@ -188,15 +188,15 @@ export function ListingBrowser({ config }: { config: BrowseConfig }) {
   return (
     <div className="mx-auto max-w-7xl px-6 py-10">
       <div className="mb-8">
-        <h1 className="font-display text-3xl font-bold tracking-tight text-brand-950">{config.title}</h1>
+        <h1 className="font-display text-3xl font-bold tracking-tight text-ink">{config.title}</h1>
         {config.subtitle && <p className="mt-2 text-brand-500">{config.subtitle}</p>}
       </div>
 
       <div className="grid gap-8 lg:grid-cols-[260px_1fr]">
         {/* Desktop filters */}
         <aside className="hidden lg:block">
-          <div className="sticky top-24 rounded-lg border border-brand-100 bg-white p-5">
-            <h2 className="mb-4 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-brand-900">
+          <div className="sticky top-24 rounded-lg border border-brand-100 bg-surface p-5">
+            <h2 className="mb-4 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-ink">
               <SlidersHorizontal className="h-4 w-4" /> Filters
             </h2>
             {filterPanel}
@@ -212,7 +212,7 @@ export function ListingBrowser({ config }: { config: BrowseConfig }) {
             </p>
             <div className="flex items-center gap-2">
               <button
-                className="lg:hidden inline-flex items-center gap-1.5 rounded-md border border-brand-200 px-3 py-2 text-sm font-medium text-brand-800"
+                className="lg:hidden inline-flex items-center gap-1.5 rounded-md border border-brand-200 px-3 py-2 text-sm font-medium text-ink"
                 onClick={() => setMobileFilters(true)}
               >
                 <SlidersHorizontal className="h-4 w-4" /> Filters
@@ -260,9 +260,9 @@ export function ListingBrowser({ config }: { config: BrowseConfig }) {
       {mobileFilters && (
         <div className="fixed inset-0 z-50 lg:hidden">
           <div className="absolute inset-0 bg-brand-950/50" onClick={() => setMobileFilters(false)} />
-          <div className="absolute inset-y-0 right-0 w-full max-w-sm overflow-y-auto bg-white p-5 shadow-xl">
+          <div className="absolute inset-y-0 right-0 w-full max-w-sm overflow-y-auto bg-surface p-5 shadow-xl">
             <div className="mb-4 flex items-center justify-between">
-              <h2 className="text-base font-bold text-brand-950">Filters</h2>
+              <h2 className="text-base font-bold text-ink">Filters</h2>
               <Button variant="ghost" size="icon" onClick={() => setMobileFilters(false)}>
                 <X className="h-5 w-5" />
               </Button>

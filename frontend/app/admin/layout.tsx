@@ -114,20 +114,20 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <div className="fixed inset-0 z-50 lg:hidden">
           <div className="absolute inset-0 bg-brand-950/60" onClick={() => setSidebarOpen(false)} />
           <aside className="absolute inset-y-0 left-0 w-64 bg-brand-950 shadow-xl">{sidebar}</aside>
-          <button className="absolute right-4 top-4 rounded-md bg-white p-2" onClick={() => setSidebarOpen(false)}>
-            <X className="h-5 w-5 text-brand-800" />
+          <button className="absolute right-4 top-4 rounded-md bg-surface p-2" onClick={() => setSidebarOpen(false)}>
+            <X className="h-5 w-5 text-ink" />
           </button>
         </div>
       )}
 
       {/* Main */}
       <div className="flex min-w-0 flex-1 flex-col">
-        <header className="flex h-16 items-center justify-between border-b border-brand-100 bg-white px-4 sm:px-6">
+        <header className="flex h-16 items-center justify-between border-b border-brand-100 bg-surface px-4 sm:px-6">
           <div className="flex items-center gap-3">
             <button className="rounded-md p-2 text-brand-700 hover:bg-brand-50 lg:hidden" onClick={() => setSidebarOpen(true)}>
               <Menu className="h-5 w-5" />
             </button>
-            <h1 className="font-display text-lg font-bold text-brand-950">Administration</h1>
+            <h1 className="font-display text-lg font-bold text-ink">Administration</h1>
           </div>
           <div className="flex items-center gap-3">
             <button className="relative rounded-md p-2 text-brand-700 hover:bg-brand-50" aria-label="Notifications">
@@ -137,7 +137,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               <div className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-800 text-sm font-bold text-white">
                 {user?.name?.charAt(0)?.toUpperCase()}
               </div>
-              <span className="hidden text-sm font-medium text-brand-800 sm:block">{user?.name}</span>
+              <span className="hidden text-sm font-medium text-ink sm:block">{user?.name}</span>
             </div>
           </div>
         </header>

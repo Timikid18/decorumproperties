@@ -76,7 +76,7 @@ export default function AdminCategoriesPage() {
     <div className="space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <h2 className="font-display text-2xl font-bold text-brand-950">Categories</h2>
+          <h2 className="font-display text-2xl font-bold text-ink">Categories</h2>
           <p className="text-sm text-brand-500">Organise listings into browsable categories.</p>
         </div>
         <Button onClick={openCreate}>New Category</Button>
@@ -93,7 +93,7 @@ export default function AdminCategoriesPage() {
               <CardContent className="p-4">
                 <div className="flex items-start justify-between gap-2">
                   <div>
-                    <h3 className="font-bold text-brand-950">{cat.name}</h3>
+                    <h3 className="font-bold text-ink">{cat.name}</h3>
                     {cat.group && <p className="text-xs text-brand-400">{cat.group.name}</p>}
                   </div>
                   {cat.is_featured && <Badge tone="amber">Featured</Badge>}
@@ -122,7 +122,7 @@ export default function AdminCategoriesPage() {
               {TYPES.map((t) => <option key={t} value={t}>{t}</option>)}
             </Select>
           </div>
-          <label className="flex items-center gap-2 text-sm text-brand-800">
+          <label className="flex items-center gap-2 text-sm text-ink">
             <input type="checkbox" checked={form.is_featured} onChange={(e) => setForm({ ...form, is_featured: e.target.checked })} className="h-4 w-4 accent-brand-700" />
             Featured category
           </label>

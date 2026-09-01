@@ -20,6 +20,7 @@ import { useSiteSettings } from "@/hooks/useSiteSettings";
 import { BUSINESS, NAV_LINKS } from "@/lib/constants";
 import { cn, buildWhatsAppLink, buildTelLink } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export function Header() {
   const pathname = usePathname();
@@ -35,7 +36,7 @@ export function Header() {
   );
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-brand-100 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
+    <header className="sticky top-0 z-40 w-full border-b border-brand-100 bg-surface/95 backdrop-blur supports-[backdrop-filter]:bg-surface/80">
       {/* Top bar */}
       <div className="hidden bg-brand-800 text-white lg:block">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2 text-xs">
@@ -66,8 +67,8 @@ export function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/logo.png" alt={settings.business_name || BUSINESS.shortName} width={48} height={48} className="h-12 w-12 object-contain" />
-          <span className="hidden font-display text-lg font-bold tracking-tight text-brand-900 sm:block">
+          <Image src="/logo.png" alt={settings.business_name || BUSINESS.shortName} width={48} height={48} className="theme-logo h-12 w-12 object-contain" />
+          <span className="hidden font-display text-lg font-bold tracking-tight text-ink sm:block">
             {settings.business_name || BUSINESS.shortName}
           </span>
         </Link>
@@ -83,8 +84,8 @@ export function Header() {
                 className={cn(
                   "rounded-md px-3 py-2 text-sm font-medium transition-colors",
                   isActive
-                    ? "bg-brand-50 text-brand-800"
-                    : "text-brand-600 hover:bg-brand-50 hover:text-brand-800",
+                    ? "bg-brand-50 text-ink"
+                    : "text-brand-600 hover:bg-brand-50 hover:text-ink",
                 )}
               >
                 {link.label}
@@ -99,7 +100,7 @@ export function Header() {
             <div className="relative">
               <button
                 onClick={() => setUserMenuOpen(!userMenuOpen)}
-                className="flex items-center gap-2 rounded-md border border-brand-100 px-3 py-2 text-sm font-medium text-brand-800 transition-colors hover:bg-brand-50"
+                className="flex items-center gap-2 rounded-md border border-brand-100 px-3 py-2 text-sm font-medium text-ink transition-colors hover:bg-brand-50"
               >
                 <User className="h-4 w-4" />
                 <span className="hidden sm:inline">{user?.name}</span>
@@ -108,7 +109,7 @@ export function Header() {
               {userMenuOpen && (
                 <>
                   <div className="fixed inset-0 z-40" onClick={() => setUserMenuOpen(false)} />
-                  <div className="absolute right-0 top-full z-50 mt-1 w-48 rounded-lg border border-brand-100 bg-white py-1 shadow-lg">
+                  <div className="absolute right-0 top-full z-50 mt-1 w-48 rounded-lg border border-brand-100 bg-surface py-1 shadow-lg">
                     <Link
                       href="/account/wishlist"
                       className="flex items-center gap-2 px-4 py-2 text-sm text-brand-700 hover:bg-brand-50"
@@ -161,8 +162,9 @@ export function Header() {
             </Link>
           )}
 
+          <ThemeToggle />
           <button
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md text-brand-900 transition-colors hover:bg-brand-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md text-ink transition-colors hover:bg-brand-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 lg:hidden"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -173,7 +175,7 @@ export function Header() {
 
       {/* Mobile nav */}
       {mobileOpen && (
-        <div className="border-t border-brand-100 bg-white lg:hidden">
+        <div className="border-t border-brand-100 bg-surface lg:hidden">
           <nav className="flex flex-col gap-1 px-6 py-4" aria-label="Mobile navigation">
             {NAV_LINKS.map((link) => {
               const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
@@ -185,8 +187,8 @@ export function Header() {
                   className={cn(
                     "rounded-md px-3 py-2.5 text-sm font-medium transition-colors",
                     isActive
-                      ? "bg-brand-50 text-brand-800"
-                      : "text-brand-600 hover:bg-brand-50 hover:text-brand-800",
+                      ? "bg-brand-50 text-ink"
+                      : "text-brand-600 hover:bg-brand-50 hover:text-ink",
                   )}
                 >
                   {link.label}

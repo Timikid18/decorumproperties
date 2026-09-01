@@ -45,7 +45,7 @@ export default function ContactPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-6 py-16">
-      <h1 className="text-center font-display text-4xl font-bold tracking-tight text-brand-950">Contact Us</h1>
+      <h1 className="text-center font-display text-4xl font-bold tracking-tight text-ink">Contact Us</h1>
       <p className="mx-auto mt-3 max-w-2xl text-center text-brand-600">
         Have a question, or want to buy or sell? We&apos;d love to hear from you.
       </p>
@@ -57,7 +57,7 @@ export default function ContactPage() {
             <Card><CardContent className="flex items-start gap-4">
               <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-700" />
               <div>
-                <h3 className="font-bold text-brand-950">Visit Us</h3>
+                <h3 className="font-bold text-ink">Visit Us</h3>
                 <p className="mt-1 text-sm text-brand-600">{settings.address}</p>
               </div>
             </CardContent></Card>
@@ -66,7 +66,7 @@ export default function ContactPage() {
             <Card><CardContent className="flex items-start gap-4">
               <Phone className="mt-0.5 h-5 w-5 shrink-0 text-brand-700" />
               <div>
-                <h3 className="font-bold text-brand-950">Call Us</h3>
+                <h3 className="font-bold text-ink">Call Us</h3>
                 <a href={buildTelLink(phone)} className="mt-1 block text-sm text-brand-600 hover:underline">{phone}</a>
               </div>
             </CardContent></Card>
@@ -75,7 +75,7 @@ export default function ContactPage() {
             <Card><CardContent className="flex items-start gap-4">
               <MessageCircle className="mt-0.5 h-5 w-5 shrink-0 text-[#25D366]" />
               <div>
-                <h3 className="font-bold text-brand-950">WhatsApp</h3>
+                <h3 className="font-bold text-ink">WhatsApp</h3>
                 <a href={buildWhatsAppLink(whatsapp, waMsg)} target="_blank" rel="noopener noreferrer" className="mt-1 block text-sm text-brand-600 hover:underline">
                   Chat with us
                 </a>
@@ -86,7 +86,7 @@ export default function ContactPage() {
             <Card><CardContent className="flex items-start gap-4">
               <Mail className="mt-0.5 h-5 w-5 shrink-0 text-brand-700" />
               <div>
-                <h3 className="font-bold text-brand-950">Email</h3>
+                <h3 className="font-bold text-ink">Email</h3>
                 <a href={`mailto:${settings.email}`} className="mt-1 block text-sm text-brand-600 hover:underline">{settings.email}</a>
               </div>
             </CardContent></Card>
@@ -96,7 +96,7 @@ export default function ContactPage() {
         {/* Form */}
         <Card>
           <CardContent className="p-6 sm:p-8">
-            <h2 className="font-display text-xl font-bold text-brand-950">Send a Message</h2>
+            <h2 className="font-display text-xl font-bold text-ink">Send a Message</h2>
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
               {error && <FieldError message={error} />}
               <div className="grid gap-4 sm:grid-cols-2">

@@ -55,14 +55,14 @@ export default function ProfilePage() {
 
   return (
     <div>
-      <h1 className="mb-6 flex items-center gap-2 font-display text-2xl font-bold text-brand-950">
+      <h1 className="mb-6 flex items-center gap-2 font-display text-2xl font-bold text-ink">
         <UserIcon className="h-6 w-6 text-brand-700" /> My Profile
       </h1>
 
       <div className="grid gap-6 lg:grid-cols-2">
         <Card>
           <CardContent>
-            <h2 className="mb-4 text-lg font-bold text-brand-950">Personal Information</h2>
+            <h2 className="mb-4 text-lg font-bold text-ink">Personal Information</h2>
             <form onSubmit={saveProfile} className="space-y-4">
               <div>
                 <Label htmlFor="name">Full Name</Label>
@@ -87,7 +87,7 @@ export default function ProfilePage() {
 
         <Card>
           <CardContent>
-            <h2 className="mb-4 text-lg font-bold text-brand-950">Change Password</h2>
+            <h2 className="mb-4 text-lg font-bold text-ink">Change Password</h2>
             <form onSubmit={savePassword} className="space-y-4">
               {pwdError && <FieldError message={pwdError} />}
               <div>

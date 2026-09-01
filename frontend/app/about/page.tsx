@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-4xl px-6 py-16">
-      <h1 className="text-center font-display text-4xl font-bold tracking-tight text-brand-950">About DECORUM</h1>
+      <h1 className="text-center font-display text-4xl font-bold tracking-tight text-ink">About DECORUM</h1>
       <p className="mx-auto mt-3 max-w-2xl text-center text-brand-600">
         DECORUM HOMES & PROPERTIES is a trusted marketplace and property services company making it effortless to
         buy, sell, and own.
@@ -20,7 +20,7 @@ export default function AboutPage() {
 
       <div className="mt-12 space-y-8">
         <section>
-          <h2 className="font-display text-2xl font-bold text-brand-900">Our Story</h2>
+          <h2 className="font-display text-2xl font-bold text-ink">Our Story</h2>
           <p className="mt-3 leading-relaxed text-brand-600">
             Based in Abeokuta, Ogun State, DECORUM started with a simple belief: buying and selling should be honest,
             transparent, and simple. Today we help people find homes, land, vehicles, gadgets, appliances and more —
@@ -35,15 +35,15 @@ export default function AboutPage() {
             { icon: <Handshake className="h-6 w-6" />, title: "Guided Transactions", text: "We support you through enquiries, negotiations and completion every step of the way." },
             { icon: <Rocket className="h-6 w-6" />, title: "Sell With Confidence", text: "Submit your item and our network of serious buyers helps you sell quickly and fairly." },
           ].map((v) => (
-            <div key={v.title} className="rounded-lg border border-brand-100 bg-white p-6 shadow-card">
+            <div key={v.title} className="rounded-lg border border-brand-100 bg-surface p-6 shadow-card">
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-brand-50 text-brand-700">{v.icon}</div>
-              <h3 className="text-base font-bold text-brand-950">{v.title}</h3>
+              <h3 className="text-base font-bold text-ink">{v.title}</h3>
               <p className="mt-2 text-sm text-brand-500">{v.text}</p>
             </div>
           ))}
         </div>
 
-        <section className="grid items-center gap-8 rounded-lg border border-brand-100 bg-white p-8 shadow-card sm:grid-cols-[16rem_1fr]">
+        <section className="grid items-center gap-8 rounded-lg border border-brand-100 bg-surface p-8 shadow-card sm:grid-cols-[16rem_1fr]">
           <div className="mx-auto w-full max-w-[16rem] overflow-hidden rounded-lg ring-1 ring-brand-100">
             <Image
               src="/CEO.png"
@@ -55,7 +55,7 @@ export default function AboutPage() {
             />
           </div>
           <div>
-            <h2 className="font-display text-2xl font-bold text-brand-900">Meet Our CEO</h2>
+            <h2 className="font-display text-2xl font-bold text-ink">Meet Our CEO</h2>
             <p className="mt-3 leading-relaxed text-brand-600">
               Leading DECORUM is a commitment to honesty, transparency and service. Our CEO drives every decision
               with the communities we serve in mind — ensuring that whether you are buying your first home or selling

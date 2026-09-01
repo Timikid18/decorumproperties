@@ -52,7 +52,7 @@ export default function AdminSellRequestsPage() {
   return (
     <div className="space-y-5">
       <div>
-        <h2 className="font-display text-2xl font-bold text-brand-950">Sell Requests</h2>
+        <h2 className="font-display text-2xl font-bold text-ink">Sell Requests</h2>
         <p className="text-sm text-brand-500">Items customers want to sell to DECORUM.</p>
       </div>
 
@@ -93,7 +93,7 @@ export default function AdminSellRequestsPage() {
                       <div className="flex flex-wrap items-center gap-2">
                         <button
                           onClick={() => router.push(`/admin/sell-requests/${item.id}`)}
-                          className="text-left font-bold text-brand-950 hover:text-brand-700"
+                          className="text-left font-bold text-ink hover:text-brand-700"
                         >
                           {item.item_title}
                         </button>
@@ -104,7 +104,7 @@ export default function AdminSellRequestsPage() {
                       </p>
                     </div>
                     <div className="flex items-center gap-3">
-                      <span className="font-semibold text-brand-800">{formatPrice(item.asking_price)}</span>
+                      <span className="font-semibold text-ink">{formatPrice(item.asking_price)}</span>
                       <Select
                         value={item.status}
                         onChange={(e) => changeStatus(item, e.target.value)}

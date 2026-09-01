@@ -123,7 +123,7 @@ export default function SellToUsPage() {
     return (
       <div className="mx-auto max-w-xl px-6 py-24 text-center">
         <CheckCircle2 className="mx-auto h-14 w-14 text-emerald-500" />
-        <h1 className="mt-4 font-display text-3xl font-bold text-brand-950">Submission Received!</h1>
+        <h1 className="mt-4 font-display text-3xl font-bold text-ink">Submission Received!</h1>
         <p className="mt-3 text-brand-600">
           Thank you for choosing to sell with DECORUM. Our team will review your item and contact you shortly.
         </p>
@@ -163,7 +163,7 @@ export default function SellToUsPage() {
         ))}
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-6 rounded-lg border border-brand-100 bg-white p-6 shadow-card sm:p-8">
+      <form onSubmit={handleSubmit} className="space-y-6 rounded-lg border border-brand-100 bg-surface p-6 shadow-card sm:p-8">
         {step === 0 && (
           <>
             <div className="grid gap-4 sm:grid-cols-2">
@@ -301,7 +301,7 @@ export default function SellToUsPage() {
 
         {step === steps.length - 1 && (
           <div className="space-y-4">
-            <h3 className="font-display text-lg font-bold text-brand-950">Review Your Submission</h3>
+            <h3 className="font-display text-lg font-bold text-ink">Review Your Submission</h3>
             <dl className="grid gap-3 rounded-lg border border-brand-100 p-4 text-sm sm:grid-cols-2">
               {[
                 ["Item Type", LISTING_TYPES.find((t) => t.value === form.listing_type)?.label],
@@ -317,7 +317,7 @@ export default function SellToUsPage() {
               ].map(([label, value]) => (
                 <div key={label}>
                   <dt className="text-xs font-semibold uppercase tracking-wide text-brand-400">{label}</dt>
-                  <dd className="mt-1 font-medium text-brand-900">{value || "—"}</dd>
+                  <dd className="mt-1 font-medium text-ink">{value || "—"}</dd>
                 </div>
               ))}
             </dl>

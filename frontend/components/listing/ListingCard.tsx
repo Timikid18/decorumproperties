@@ -92,7 +92,7 @@ export function WishlistButton({ listing }: { listing: Listing }) {
     <button
       onClick={toggle}
       aria-label={isFav ? "Remove from wishlist" : "Add to wishlist"}
-      className="flex h-9 w-9 items-center justify-center rounded-full bg-white/90 shadow-sm transition-all hover:scale-105"
+      className="flex h-9 w-9 items-center justify-center rounded-full bg-surface/90 shadow-sm transition-all hover:scale-105"
     >
       <Heart
         className={cn(
@@ -132,13 +132,13 @@ export function ListingCard({ listing }: { listing: Listing }) {
 
       <div className="p-4">
         <Link href={`/listing/${listing.slug}`} className="block">
-          <h3 className="line-clamp-2 min-h-[2.5rem] text-sm font-bold leading-snug text-brand-950 transition-colors group-hover:text-brand-700">
+          <h3 className="line-clamp-2 min-h-[2.5rem] text-sm font-bold leading-snug text-ink transition-colors group-hover:text-brand-700">
             {listing.title}
           </h3>
         </Link>
         <div className="mt-2 flex items-start justify-between gap-3">
           <div>
-            <p className="text-lg font-bold text-brand-800">
+            <p className="text-lg font-bold text-ink">
               {formatPrice(listing.price, listing.currency)}
             </p>
             {listing.is_price_negotiable && (
@@ -155,7 +155,7 @@ export function ListingCard({ listing }: { listing: Listing }) {
         <div className="mt-3 flex items-center gap-2 border-t border-brand-100 pt-3">
           <Link
             href={`/listing/${listing.slug}`}
-            className="flex-1 rounded-md bg-brand-50 py-2 text-center text-sm font-semibold text-brand-800 transition-colors hover:bg-brand-100"
+            className="flex-1 rounded-md bg-brand-50 py-2 text-center text-sm font-semibold text-ink transition-colors hover:bg-brand-100"
           >
             View Details
           </Link>

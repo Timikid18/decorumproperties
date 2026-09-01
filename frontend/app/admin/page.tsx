@@ -45,7 +45,7 @@ export default function AdminDashboardPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="font-display text-2xl font-bold text-brand-950">Dashboard</h2>
+        <h2 className="font-display text-2xl font-bold text-ink">Dashboard</h2>
         <p className="text-sm text-brand-500">Overview of your marketplace.</p>
       </div>
 
@@ -57,7 +57,7 @@ export default function AdminDashboardPage() {
                 <div className={cn("mb-3 flex h-10 w-10 items-center justify-center rounded-md", stat.tone)}>
                   {stat.icon}
                 </div>
-                <p className="font-display text-2xl font-bold text-brand-950">{stat.value}</p>
+                <p className="font-display text-2xl font-bold text-ink">{stat.value}</p>
                 <p className="text-sm text-brand-500">{stat.label}</p>
               </CardContent>
             </Card>
@@ -69,7 +69,7 @@ export default function AdminDashboardPage() {
       <div className="grid gap-4 md:grid-cols-2">
         <Card>
           <CardContent>
-            <h3 className="font-bold text-brand-950">Needs Attention</h3>
+            <h3 className="font-bold text-ink">Needs Attention</h3>
             <ul className="mt-3 space-y-2 text-sm">
               <li className="flex items-center justify-between gap-2">
                 <span>New enquiries</span>
@@ -85,7 +85,7 @@ export default function AdminDashboardPage() {
               </li>
               <li className="flex items-center justify-between gap-2">
                 <span>Sold items</span>
-                <span className="font-semibold text-brand-800">{s.sold_items}</span>
+                <span className="font-semibold text-ink">{s.sold_items}</span>
               </li>
             </ul>
           </CardContent>
@@ -93,7 +93,7 @@ export default function AdminDashboardPage() {
 
         <Card>
           <CardContent>
-            <h3 className="font-bold text-brand-950">Listings Per Month</h3>
+            <h3 className="font-bold text-ink">Listings Per Month</h3>
             {data.charts.listings_per_month.length === 0 ? (
               <p className="mt-3 text-sm text-brand-400">No data yet.</p>
             ) : (

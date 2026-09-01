@@ -21,7 +21,7 @@ export default function MyEnquiriesPage() {
 
   return (
     <div>
-      <h1 className="mb-6 flex items-center gap-2 font-display text-2xl font-bold text-brand-950">
+      <h1 className="mb-6 flex items-center gap-2 font-display text-2xl font-bold text-ink">
         <MessagesSquare className="h-6 w-6 text-brand-700" /> My Enquiries
       </h1>
 
@@ -44,7 +44,7 @@ export default function MyEnquiriesPage() {
               <CardContent className="p-5">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div>
-                    <h3 className="font-bold text-brand-950">
+                    <h3 className="font-bold text-ink">
                       {enq.listing ? enq.listing.title : "General Enquiry"}
                     </h3>
                     <p className="mt-0.5 text-sm text-brand-500">{formatDateTime(enq.created_at)}</p>

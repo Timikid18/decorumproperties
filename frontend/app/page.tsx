@@ -89,7 +89,7 @@ export default function HomePage() {
 
         <div className="relative mx-auto max-w-7xl px-6 py-20 sm:py-28">
           <div className="max-w-3xl">
-            <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide">
+            <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-surface/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide">
               <Sparkles className="h-3.5 w-3.5 text-accent-400" />
               {settings.slogan || "Buy. Sell. Own."}
             </p>
@@ -104,7 +104,7 @@ export default function HomePage() {
             {/* Search */}
             <form
               onSubmit={handleSearch}
-              className="mt-8 flex w-full max-w-2xl flex-col gap-3 rounded-xl bg-white p-3 shadow-xl sm:flex-row"
+              className="mt-8 flex w-full max-w-2xl flex-col gap-3 rounded-xl bg-surface p-3 shadow-xl sm:flex-row"
             >
               <div className="flex flex-1 items-center gap-2 rounded-lg border border-brand-100 px-3">
                 <Search className="h-5 w-5 text-brand-400" />
@@ -112,13 +112,13 @@ export default function HomePage() {
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="Search lands, homes, cars, gadgets…"
-                  className="w-full bg-transparent py-3 text-sm text-brand-950 placeholder:text-brand-300 focus:outline-none"
+                  className="w-full bg-transparent py-3 text-sm text-ink placeholder:text-brand-300 focus:outline-none"
                 />
               </div>
               <select
                 value={listingType}
                 onChange={(e) => setListingType(e.target.value)}
-                className="rounded-lg border border-brand-100 bg-white px-3 py-3 text-sm font-medium text-brand-800 focus:outline-none"
+                className="rounded-lg border border-brand-100 bg-surface px-3 py-3 text-sm font-medium text-ink focus:outline-none"
               >
                 <option value="">All categories</option>
                 <option value="property">Properties</option>
@@ -148,7 +148,7 @@ export default function HomePage() {
 
       {/* Category strip */}
       {categories.length > 0 && (
-        <section className="border-b border-brand-100 bg-white">
+        <section className="border-b border-brand-100 bg-surface">
           <div className="mx-auto max-w-7xl px-6 py-8">
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
               {categories.slice(0, 6).map((cat) => (
@@ -160,7 +160,7 @@ export default function HomePage() {
                   <span className="text-brand-700">
                     {CATEGORY_ICONS[cat.type ?? ""] ?? <HomeIcon className="h-6 w-6" />}
                   </span>
-                  <span className="text-sm font-semibold text-brand-900">{cat.name}</span>
+                  <span className="text-sm font-semibold text-ink">{cat.name}</span>
                 </Link>
               ))}
             </div>
@@ -176,7 +176,7 @@ export default function HomePage() {
             title="Featured Listings"
             subtitle="A curated selection of standout properties and items."
             action={
-              <Link href="/listings" className="inline-flex items-center gap-1 text-sm font-semibold text-brand-800 hover:underline">
+              <Link href="/listings" className="inline-flex items-center gap-1 text-sm font-semibold text-ink hover:underline">
                 View all <ArrowRight className="h-4 w-4" />
               </Link>
             }
@@ -205,7 +205,7 @@ export default function HomePage() {
             title="Latest Arrivals"
             subtitle="Fresh listings added recently across the marketplace."
             action={
-              <Link href="/listings" className="inline-flex items-center gap-1 text-sm font-semibold text-brand-800 hover:underline">
+              <Link href="/listings" className="inline-flex items-center gap-1 text-sm font-semibold text-ink hover:underline">
                 Browse all <ArrowRight className="h-4 w-4" />
               </Link>
             }
@@ -227,7 +227,7 @@ export default function HomePage() {
       </section>
 
       {/* Value props */}
-      <section className="border-t border-brand-100 bg-white py-16">
+      <section className="border-t border-brand-100 bg-surface py-16">
         <div className="mx-auto grid max-w-7xl gap-6 px-6 sm:grid-cols-3">
           {[
             {
@@ -250,7 +250,7 @@ export default function HomePage() {
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-brand-50 text-brand-700">
                 {v.icon}
               </div>
-              <h3 className="text-base font-bold text-brand-950">{v.title}</h3>
+              <h3 className="text-base font-bold text-ink">{v.title}</h3>
               <p className="mt-2 text-sm text-brand-500">{v.text}</p>
             </div>
           ))}

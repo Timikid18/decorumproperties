@@ -144,10 +144,10 @@ export function ListingForm({ existing }: { existing?: Listing }) {
   );
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-8 rounded-lg border border-brand-100 bg-white p-6 shadow-card sm:p-8">
+    <form onSubmit={handleSubmit} className="space-y-8 rounded-lg border border-brand-100 bg-surface p-6 shadow-card sm:p-8">
       {/* Basics */}
       <section className="space-y-4">
-        <h2 className="font-display text-lg font-bold text-brand-950">Basic Information</h2>
+        <h2 className="font-display text-lg font-bold text-ink">Basic Information</h2>
         <div>
           <Label htmlFor="title">Title *</Label>
           <Input id="title" required value={form.title} onChange={(e) => set("title", e.target.value)} placeholder="e.g. 3-bedroom house in Abeokuta" />
@@ -185,7 +185,7 @@ export function ListingForm({ existing }: { existing?: Listing }) {
 
       {/* Pricing & location */}
       <section className="space-y-4">
-        <h2 className="font-display text-lg font-bold text-brand-950">Pricing & Location</h2>
+        <h2 className="font-display text-lg font-bold text-ink">Pricing & Location</h2>
         <div className="grid gap-4 sm:grid-cols-3">
           <div>
             <Label htmlFor="price">Price (₦)</Label>
@@ -222,7 +222,7 @@ export function ListingForm({ existing }: { existing?: Listing }) {
 
       {/* Features */}
       <section className="space-y-4">
-        <h2 className="font-display text-lg font-bold text-brand-950">Features</h2>
+        <h2 className="font-display text-lg font-bold text-ink">Features</h2>
         <div className="flex flex-wrap items-center gap-2">
           <Input
             placeholder="Add a feature and press Enter…"
@@ -244,7 +244,7 @@ export function ListingForm({ existing }: { existing?: Listing }) {
         </div>
         <div className="flex flex-wrap gap-2">
           {form.features.map((f, i) => (
-            <span key={i} className="inline-flex items-center gap-1.5 rounded-md bg-brand-50 px-2.5 py-1 text-sm text-brand-800">
+            <span key={i} className="inline-flex items-center gap-1.5 rounded-md bg-brand-50 px-2.5 py-1 text-sm text-ink">
               {f}
               <button type="button" onClick={() => set("features", form.features.filter((_, idx) => idx !== i))} className="text-brand-400 hover:text-accent-600">×</button>
             </span>
@@ -255,7 +255,7 @@ export function ListingForm({ existing }: { existing?: Listing }) {
       {/* Property details */}
       {isProperty && (
         <section className="space-y-4">
-          <h2 className="font-display text-lg font-bold text-brand-950">Property Details</h2>
+          <h2 className="font-display text-lg font-bold text-ink">Property Details</h2>
           <div className="grid gap-4 sm:grid-cols-3">
             {propField("property_type", "Property Type")}
             {propField("land_size", "Land Size")}
@@ -273,7 +273,7 @@ export function ListingForm({ existing }: { existing?: Listing }) {
       {/* Vehicle details */}
       {isVehicle && (
         <section className="space-y-4">
-          <h2 className="font-display text-lg font-bold text-brand-950">Vehicle Details</h2>
+          <h2 className="font-display text-lg font-bold text-ink">Vehicle Details</h2>
           <div className="grid gap-4 sm:grid-cols-3">
             {autoField("make", "Make")}
             {autoField("model", "Model")}
@@ -293,7 +293,7 @@ export function ListingForm({ existing }: { existing?: Listing }) {
 
       {/* Media */}
       <section className="space-y-4">
-        <h2 className="font-display text-lg font-bold text-brand-950">Media</h2>
+        <h2 className="font-display text-lg font-bold text-ink">Media</h2>
         <div>
           <Label htmlFor="images">Images</Label>
           <input
@@ -314,13 +314,13 @@ export function ListingForm({ existing }: { existing?: Listing }) {
 
       {/* Publishing */}
       <section className="space-y-4">
-        <h2 className="font-display text-lg font-bold text-brand-950">Publishing</h2>
+        <h2 className="font-display text-lg font-bold text-ink">Publishing</h2>
         <div className="flex gap-6">
-          <label className="flex items-center gap-2 text-sm text-brand-800">
+          <label className="flex items-center gap-2 text-sm text-ink">
             <input type="checkbox" checked={form.is_published} onChange={(e) => set("is_published", e.target.checked)} className="h-4 w-4 accent-brand-700" />
             Publish immediately
           </label>
-          <label className="flex items-center gap-2 text-sm text-brand-800">
+          <label className="flex items-center gap-2 text-sm text-ink">
             <input type="checkbox" checked={form.is_featured} onChange={(e) => set("is_featured", e.target.checked)} className="h-4 w-4 accent-brand-700" />
             Mark as featured
           </label>

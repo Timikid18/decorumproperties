@@ -3,8 +3,57 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
+  color-scheme: light;
+  --brand-50: 217 62% 96%;
+  --brand-100: 218 63% 92%;
+  --brand-200: 217 63% 82%;
+  --brand-300: 217 58% 70%;
+  --brand-400: 216 49% 55%;
+  --brand-500: 221 57% 42%;
+  --brand-600: 221 63% 33%;
+  --brand-700: 221 67% 26%;
+  --brand-800: 221 71% 20%;
+  --brand-900: 221 74% 15%;
+  --brand-950: 221 74% 14%;
+  --accent-50: 355 86% 97%;
+  --accent-100: 353 87% 94%;
+  --accent-200: 353 87% 88%;
+  --accent-300: 353 85% 79%;
+  --accent-400: 353 83% 66%;
+  --accent-500: 355 74% 54%;
+  --accent-600: 354 74% 45%;
+  --accent-700: 355 76% 37%;
+  --accent-800: 354 73% 32%;
+  --accent-900: 355 66% 27%;
+  --surface: 0 0% 100%;
+  --ink: 221 74% 15%;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --brand-50: 227 50% 13%;
+  --brand-100: 227 42% 19%;
+  --brand-200: 225 36% 25%;
+  --brand-300: 222 38% 66%;
+  --brand-400: 221 36% 56%;
+  --brand-500: 219 40% 47%;
+  --brand-600: 218 45% 78%;
+  --brand-700: 218 50% 86%;
+  --brand-800: 224 45% 16%;
+  --brand-900: 222 55% 10%;
+  --brand-950: 221 60% 7%;
+  --accent-50: 351 55% 14%;
+  --accent-100: 353 50% 19%;
+  --accent-200: 354 44% 25%;
+  --accent-300: 354 44% 34%;
+  --accent-400: 354 45% 42%;
+  --accent-500: 354 52% 51%;
+  --accent-600: 353 64% 60%;
+  --accent-700: 353 75% 68%;
+  --accent-800: 353 84% 77%;
+  --accent-900: 352 92% 86%;
+  --surface: 225 58% 13%;
+  --ink: 219 50% 92%;
 }
 
 html {
@@ -13,15 +62,20 @@ html {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: hsl(var(--ink));
+  background: hsl(var(--surface));
   font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
-  background: #0f2657;
+  background: hsl(var(--brand-800));
   color: #ffffff;
+}
+
+[data-theme="dark"] .theme-logo {
+  filter: invert(1) hue-rotate(195deg) brightness(1.35) contrast(0.9);
 }
 
 @layer utilities {
@@ -37,7 +91,7 @@ body {
 .shimmer {
   position: relative;
   overflow: hidden;
-  background-color: #eef1f6;
+  background-color: hsl(var(--brand-50));
 }
 .shimmer::after {
   content: "";

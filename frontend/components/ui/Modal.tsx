@@ -45,13 +45,13 @@ export function Modal({ open, onClose, title, children, size = "md" }: ModalProp
         aria-modal="true"
         aria-label={title}
         className={cn(
-          "w-full rounded-lg bg-white shadow-xl",
+          "w-full rounded-lg bg-surface shadow-xl",
           sizes[size],
         )}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between border-b border-brand-100 px-5 py-4">
-          <h3 className="text-base font-bold text-brand-950">{title}</h3>
+          <h3 className="text-base font-bold text-ink">{title}</h3>
           <Button
             type="button"
             variant="ghost"

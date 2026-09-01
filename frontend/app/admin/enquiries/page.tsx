@@ -51,7 +51,7 @@ export default function AdminEnquiriesPage() {
   return (
     <div className="space-y-5">
       <div>
-        <h2 className="font-display text-2xl font-bold text-brand-950">Enquiries</h2>
+        <h2 className="font-display text-2xl font-bold text-ink">Enquiries</h2>
         <p className="text-sm text-brand-500">Messages from visitors about listings and the business.</p>
       </div>
 
@@ -88,7 +88,7 @@ export default function AdminEnquiriesPage() {
                   <div className="flex flex-wrap items-start justify-between gap-4">
                     <button onClick={() => router.push(`/admin/enquiries/${enq.id}`)} className="min-w-0 text-left">
                       <div className="flex flex-wrap items-center gap-2">
-                        <span className="font-bold text-brand-950 hover:text-brand-700">{enq.name}</span>
+                        <span className="font-bold text-ink hover:text-brand-700">{enq.name}</span>
                         {enq.listing && <Badge tone="slate">{enq.listing.title}</Badge>}
                         <Badge tone="blue">{enq.source}</Badge>
                       </div>

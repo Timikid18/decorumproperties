@@ -50,8 +50,8 @@ export default function RegisterPage() {
 
   return (
     <div className="mx-auto max-w-md px-6 py-16">
-      <div className="rounded-lg border border-brand-100 bg-white p-8 shadow-card">
-        <h1 className="text-center font-display text-2xl font-bold text-brand-950">Create Account</h1>
+      <div className="rounded-lg border border-brand-100 bg-surface p-8 shadow-card">
+        <h1 className="text-center font-display text-2xl font-bold text-ink">Create Account</h1>
         <p className="mt-2 text-center text-sm text-brand-500">
           Join DECORUM to save favorites and track your enquiries.
         </p>

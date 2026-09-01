@@ -43,12 +43,12 @@ const SECTIONS = [
 export default function TermsPage() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-16">
-      <h1 className="font-display text-4xl font-bold tracking-tight text-brand-950">Terms of Service</h1>
+      <h1 className="font-display text-4xl font-bold tracking-tight text-ink">Terms of Service</h1>
       <p className="mt-3 text-sm text-brand-500">Last updated: January 2025</p>
       <div className="mt-8 space-y-6">
         {SECTIONS.map((s) => (
           <section key={s.title}>
-            <h2 className="font-display text-xl font-bold text-brand-900">{s.title}</h2>
+            <h2 className="font-display text-xl font-bold text-ink">{s.title}</h2>
             <p className="mt-2 leading-relaxed text-brand-600">{s.body}</p>
           </section>
         ))}

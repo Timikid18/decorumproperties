@@ -12,7 +12,7 @@ class AdminUserSeeder extends Seeder
 {
     public function run(): void
     {
-        $password = getenv('SEED_ADMIN_PASSWORD');
+        $password = $this->configuredPassword();
 
         if (! $password) {
             $password = Str::random(32);
@@ -47,13 +47,36 @@ class AdminUserSeeder extends Seeder
                 ]
             );
 
-            // Reset passwords on every seed only when SEED_ADMIN_PASSWORD is
-            // explicitly configured; otherwise preserve existing passwords.
-            if ($user->wasRecentlyCreated || getenv('SEED_ADMIN_PASSWORD')) {
+            if ($user->wasRecentlyCreated || $this->configuredPassword()) {
                 $user->update(['password' => Hash::make($password)]);
             }
 
             $user->assignRole($admin['role']);
         }
+    }
+
+    private function configuredPassword(): ?string
+    {
+        $fromEnv = getenv('SEED_ADMIN_PASSWORD');
+
+        if ($fromEnv) {
+            return $fromEnv;
+        }
+
+        $file = base_path('.env');
+
+        if (! is_file($file)) {
+            return null;
+        }
+
+        $contents = file_get_contents($file);
+
+        if ($contents !== false && preg_match('/^SEED_ADMIN_PASSWORD\s*=\s*(?:"([^"]*)"|([^\s]*))/m', $contents, $matches)) {
+            $value = $matches[1] !== '' ? $matches[1] : ($matches[2] ?? '');
+
+            return $value !== '' ? $value : null;
+        }
+
+        return null;
     }
 }

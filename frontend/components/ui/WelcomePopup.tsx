@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { CalendarDays, Sparkles, X } from "lucide-react";
-import { storageUrl } from "@/lib/api";
 
 const AUTO_DISMISS_MS = 9000;
 const FADE_MS = 400;
@@ -117,7 +116,7 @@ export function WelcomePopup() {
           </div>
         ) : (
           <Image
-            src={storageUrl("popup.jpg")}
+            src="/monthly-flyer.jpg"
             alt={`${monthLabel} new month flyer — DECORUM HOMES & PROPERTIES`}
             width={1080}
             height={1080}

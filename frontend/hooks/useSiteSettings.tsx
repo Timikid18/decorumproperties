@@ -40,6 +40,13 @@ function toWa(phone: string): string {
   return digits.startsWith("234") ? digits : "234" + digits.slice(1);
 }
 
+function primaryFirst(list: string[] | undefined, primary: string): string[] | undefined {
+  if (!list || list.length === 0) return list;
+  const p = toWa(primary);
+  const rest = list.filter((n) => n !== p);
+  return [p, ...rest];
+}
+
 export function SiteSettingsProvider({ children }: { children: ReactNode }) {
   const [settings, setSettings] = useState<SiteSettings>(FALLBACK);
   const [loading, setLoading] = useState(true);
@@ -47,7 +54,9 @@ export function SiteSettingsProvider({ children }: { children: ReactNode }) {
   const refresh = useCallback(async () => {
     try {
       const data = await getSiteSettings();
-      setSettings({ ...FALLBACK, ...data });
+      const merged = { ...FALLBACK, ...data };
+      merged.whatsapp_links = primaryFirst(merged.whatsapp_links, BUSINESS.whatsappNumbers[0]);
+      setSettings(merged);
     } catch {
       setSettings(FALLBACK);
     }

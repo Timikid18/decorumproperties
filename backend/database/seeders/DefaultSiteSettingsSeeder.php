@@ -14,7 +14,7 @@ class DefaultSiteSettingsSeeder extends Seeder
             ['key' => 'slogan', 'value' => 'We make buying and selling simple.', 'group' => 'brand', 'is_public' => true],
             ['key' => 'address', 'value' => 'Accord Estate, FUNAAB, Abeokuta Road, Abeokuta, Ogun State, Nigeria.', 'group' => 'contact', 'is_public' => true],
             ['key' => 'phone', 'value' => ['07066527982', '09039744172'], 'group' => 'contact', 'is_public' => true],
-            ['key' => 'whatsapp', 'value' => ['07066527982', '09039744172'], 'group' => 'contact', 'is_public' => true],
+            ['key' => 'whatsapp', 'value' => ['09039744172', '07066527982'], 'group' => 'contact', 'is_public' => true],
             ['key' => 'email', 'value' => 'decorumproperties.ng@gmail.com', 'group' => 'contact', 'is_public' => true],
             ['key' => 'facebook', 'value' => '', 'group' => 'social', 'is_public' => true],
             ['key' => 'instagram', 'value' => '', 'group' => 'social', 'is_public' => true],

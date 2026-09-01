@@ -9,7 +9,7 @@ export const BUSINESS = {
   address:
     "Accord Estate, FUNAAB, Abeokuta Road, Abeokuta, Ogun State, Nigeria.",
   phones: ["07066527982", "09039744172"],
-  whatsappNumbers: ["07066527982", "09039744172"],
+  whatsappNumbers: ["09039744172", "07066527982"],
   email: "decorumproperties.ng@gmail.com",
 } as const;
 

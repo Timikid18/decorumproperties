@@ -87,24 +87,12 @@ export function WelcomePopup() {
         onClick={dismiss}
       />
 
-      {/* card */}
+      {/* square flyer card */}
       <div
-        className={`relative z-10 w-full max-w-md overflow-hidden rounded-2xl bg-surface shadow-2xl ring-1 ring-brand-100/60 transition-all duration-[400ms] ease-out ${closing ? "scale-95 opacity-0" : "scale-100 opacity-100"}`}
+        className={`relative z-10 aspect-square w-full max-w-sm overflow-hidden rounded-2xl bg-surface shadow-2xl ring-1 ring-brand-100/60 transition-all duration-[400ms] ease-out ${closing ? "scale-95 opacity-0" : "scale-100 opacity-100"}`}
       >
-        {/* header strip */}
-        <div className="flex items-center justify-between gap-2 bg-brand-800 px-5 py-3 text-white">
-          <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-100">
-            <CalendarDays className="h-4 w-4 text-accent-400" />
-            {monthLabel} New Month Flyer
-          </p>
-          <span className="inline-flex items-center gap-1 rounded-full bg-accent-500 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
-            <Sparkles className="h-3 w-3" /> New
-          </span>
-        </div>
-
-        {/* flyer */}
         {imgError ? (
-          <div className="flex aspect-square w-full flex-col items-center justify-center gap-3 bg-brand-50 p-6 text-center">
+          <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-brand-50 p-6 text-center">
             <CalendarDays className="h-8 w-8 text-brand-400" />
             <p className="text-sm font-semibold text-brand-800">
               {monthLabel} offers are here
@@ -113,45 +101,49 @@ export function WelcomePopup() {
               The flyer could not be previewed. Visit the listings to see this
               month&apos;s offers.
             </p>
+            <Link
+              href="/listings"
+              onClick={dismiss}
+              className="mt-1 rounded-lg bg-brand-800 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-900"
+            >
+              Browse Offers
+            </Link>
           </div>
         ) : (
-          <Image
-            src="/monthly-flyer.jpg"
-            alt={`${monthLabel} new month flyer — DECORUM HOMES & PROPERTIES`}
-            width={1080}
-            height={1080}
-            priority
-            onError={() => setImgError(true)}
-            className="h-auto w-full"
-          />
-        )}
+          <div className="relative h-full w-full">
+            <Image
+              src="/monthly-flyer.jpg"
+              alt={`${monthLabel} new month flyer — DECORUM HOMES & PROPERTIES`}
+              width={1080}
+              height={1080}
+              priority
+              onError={() => setImgError(true)}
+              className="h-full w-full object-cover"
+            />
 
-        {/* body */}
-        <div className="px-5 pb-5 pt-4 text-center">
-          <h2 className="font-display text-lg font-bold tracking-tight text-ink">
-            This month, own something new
-          </h2>
-          <p className="mt-1 text-sm leading-relaxed text-brand-600">
-            Browse verified properties, vehicles, gadgets and more — or submit
-            your own and reach serious buyers today.
-          </p>
-          <Link
-            href="/listings"
-            onClick={dismiss}
-            className="mt-4 inline-flex w-full items-center justify-center rounded-lg bg-brand-800 px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-900 active:scale-[0.98]"
-          >
-            Browse Offers
-          </Link>
-          <p className="mt-3 text-xs text-brand-400">
-            Auto-closing in a few seconds… tap anywhere to close.
-          </p>
-        </div>
+            {/* month chip */}
+            <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-brand-950/70 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wide text-white backdrop-blur">
+              <CalendarDays className="h-3.5 w-3.5 text-accent-300" />
+              {monthLabel} New Month
+            </span>
+
+            {/* browse CTA */}
+            <Link
+              href="/listings"
+              onClick={dismiss}
+              className="absolute bottom-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 rounded-full bg-surface/95 px-4 py-2 text-sm font-semibold text-brand-800 shadow-md backdrop-blur transition-colors hover:bg-surface"
+            >
+              <Sparkles className="h-3.5 w-3.5 text-accent-500" />
+              Browse this month&apos;s offers
+            </Link>
+          </div>
+        )}
 
         {/* close button */}
         <button
           onClick={dismiss}
           aria-label="Close"
-          className="absolute right-3 top-2 flex h-8 w-8 items-center justify-center rounded-full bg-surface/15 text-white backdrop-blur transition-colors hover:bg-surface/30"
+          className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-brand-950/70 text-white backdrop-blur transition-colors hover:bg-brand-950/90"
         >
           <X className="h-4 w-4" />
         </button>

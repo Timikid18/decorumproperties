@@ -38,6 +38,29 @@ function resolveApiBase(): string {
 
 const API_BASE = resolveApiBase();
 
+function resolveStorageOrigin(): string {
+  if (CONFIGURED_API_URL) {
+    return CONFIGURED_API_URL.endsWith("/api")
+      ? CONFIGURED_API_URL.slice(0, -4)
+      : CONFIGURED_API_URL;
+  }
+  if (IS_PROD) {
+    // Broken marker that mirrors resolveApiBase() when the API URL is unset.
+    return "https://api.invalid";
+  }
+  if (typeof window !== "undefined" && window.location.hostname) {
+    const host = window.location.hostname;
+    const apiHost = host === "localhost" ? "127.0.0.1" : host;
+    return `http://${apiHost}:8000`;
+  }
+  return "http://localhost:8000";
+}
+
+/** Absolute URL for a file inside the backend's public storage disk. */
+export function storageUrl(path: string): string {
+  return `${resolveStorageOrigin()}/storage/${path}`;
+}
+
 export class ApiClientError extends Error {
   status: number;
   errors?: Record<string, string[]>;

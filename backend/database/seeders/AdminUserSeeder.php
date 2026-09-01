@@ -6,28 +6,33 @@ use App\Models\User;
 use App\Support\Roles;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class AdminUserSeeder extends Seeder
 {
     public function run(): void
     {
+        $password = getenv('SEED_ADMIN_PASSWORD');
+
+        if (! $password) {
+            $password = Str::random(32);
+            echo "  No SEED_ADMIN_PASSWORD set. Generated random password for admin accounts:\n  {$password}\n\n";
+        }
+
         $admins = [
             [
                 'name' => 'DECORUM Admin',
                 'email' => 'admin@decorumproperties.ng',
-                'password' => 'Decorum@2026',
                 'role' => Roles::SUPER_ADMIN,
             ],
             [
                 'name' => 'DECORUM Manager',
                 'email' => 'manager@decorumproperties.ng',
-                'password' => 'Decorum@2026',
                 'role' => Roles::ADMIN,
             ],
             [
                 'name' => 'DECORUM Staff',
                 'email' => 'staff@decorumproperties.ng',
-                'password' => 'Decorum@2026',
                 'role' => Roles::STAFF,
             ],
         ];
@@ -37,11 +42,17 @@ class AdminUserSeeder extends Seeder
                 ['email' => $admin['email']],
                 [
                     'name' => $admin['name'],
-                    'password' => Hash::make($admin['password']),
                     'status' => 'active',
                     'email_verified_at' => now(),
                 ]
             );
+
+            // Reset passwords on every seed only when SEED_ADMIN_PASSWORD is
+            // explicitly configured; otherwise preserve existing passwords.
+            if ($user->wasRecentlyCreated || getenv('SEED_ADMIN_PASSWORD')) {
+                $user->update(['password' => Hash::make($password)]);
+            }
+
             $user->assignRole($admin['role']);
         }
     }
